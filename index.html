@@ -162,9 +162,9 @@
             <li><a>RESUME TRACKING</a></li>
         </ul>
         <ul class="navigate-no2">
-            <li><a href="#Firm">Firms</a></li>
-            <li><a href="#WriteOpinion">Write opinion</a></li>
-            <li><a href="#About">About</a></li>
+            <li><a href="#profile">Profile</a></li>
+            <li><a href="#projects">Project</a></li>
+            <li><a href="#about">About</a></li>
         </ul>
     </header>
 
@@ -177,8 +177,8 @@
                 it allows users to record each job application, monitor its status, and stay
                 updated on the recruitment process.</p>
             <div style="display: flex; justify-content: space-between;">
-                <input style="width: 73%;" type="text" placeholder="Find firm" name="input-firm">
-                <select style="width: 15%;">
+                <input style="width: 62%;" type="text" placeholder="Find firm" name="input-firm">
+                <select style="width: 12%;" name="sel-status">
                     <option selected>Status</option>
                     <option>Received</option>
                     <option>Pending</option>
@@ -186,7 +186,8 @@
                     <option>Rejected</option>
                     <option>Extended</option>
                 </select>
-                <input style="width: 10%;" type="button" value="Search" name="">
+                <input style="width: 10%;font-size: large;" type="date" name="date-firm">
+                <input style="width: 10%;" type="button" value="Search" onclick="searchResume()">
             </div>
         </article>
         <!-- <section class="grid-container">
@@ -273,7 +274,19 @@
         loadResumes();
     }
     function searchResume() {
+        let companyName = document.getElementsByName("input-firm")
+        let statusResume = document.getElementsByName("sel-status")
+        let dateResume = document.getElementsByName("date-firm")
+        resumes = JSON.parse(localStorage.getItem("resumes"));
+        // if (resumes.length > 0) {
+        //     for (let index = 0; index < resumes.length; index++) {
+        //         const element = array[index];
+        //         if (element.company == s[0].value){
 
+        //         }
+        //     }
+        // }
+        console.log(companyName[0].value, statusResume[0].value, dateResume[0].value)
     }
 </script>
 
