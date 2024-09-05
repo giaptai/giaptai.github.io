@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        body {
+            margin: 0;
+        }
+
+        /* Header */
+        #head-content {
+            padding: 1em;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+            background: linear-gradient(90deg, rgba(48, 52, 63, 1) 0%, rgba(39, 52, 105, 1) 35%, rgba(30, 39, 73, 1) 100%);
+            color: #FAFAFF;
+        }
+
+        .navigate-no1 {
+            margin: 0;
+            width: fit-content;
+            display: inline-flex;
+            align-items: center;
+            justify-content: start;
+            list-style-type: none;
+            font-size: larger;
+        }
+
+        .navigate-no1 li {
+            width: 100%;
+            border-radius: 50%;
+        }
+
+        .navigate-no1 img {
+            width: 35%;
+            border-width: 35%;
+            border-radius: 50%;
+        }
+
+        .navigate-no2 {
+            margin: 0;
+            width: fit-content;
+            display: inline-flex;
+            align-items: center;
+            justify-content: end;
+            list-style-type: none;
+            font-size: large;
+        }
+
+        .navigate-no2 li {
+            margin: 0 1.5rem 0 1.5rem;
+        }
+
+        .navigate-no2 li a {
+            text-decoration: none;
+            color: #FAFAFF;
+            padding: 1em;
+        }
+
+        .navigate-no2 li a:hover {
+            border-radius: 0.5em 0.5em 0.5em 0.5em;
+            background-color: #fafaff43;
+            color: #FAFAFF;
+            padding: 1em;
+        }
+
+        /* Header */
+        #main-content {
+            min-height: 100vh;
+            margin: 3em 3em 3em 3em;
+        }
+
+        #main-content .inp-find {
+            /* color: #FAFAFF; */
+            padding: 3em 3em 3em 3em;
+            /* background-color: #FAFAFF; */
+            /* background: linear-gradient(215deg, rgba(250,250,255,1) 75%, rgba(228,217,255,1) 100%);  */
+            background: linear-gradient(200deg, rgba(228, 217, 255, 1) 0%, rgba(250, 250, 255, 1) 50%, rgba(228, 217, 255, 1) 100%);
+            margin: 1em 0 1em 0;
+            border-radius: 2em 2em 0 0;
+        }
+
+        #main-content .inp-find input {
+            width: 60vw;
+            box-sizing: border-box;
+            padding: 0.5em;
+            background-color: #FAFAFF;
+            border-radius: 0.5em 0.5em 0.5em 0.5em;
+            font-size: medium;
+            /* border: 1.5px solid; */
+        }
+
+        #main-content .inp-find select {
+            width: 20vw;
+            padding: 0.5em;
+            background-color: #FAFAFF;
+            border-radius: 0.5em 0.5em 0.5em 0.5em;
+            font-size: medium;
+        }
+
+        .grid-container {
+            display: grid;
+            gap: 2em;
+            grid-template-columns: 3fr 1fr;
+
+        }
+
+        /* table */
+        table.tb-firm {
+            text-align: center;
+            width: 100%;
+            border-collapse: collapse;
+            border: solid 1px #777
+        }
+
+        .tb-firm th,
+        .tb-firm td {
+            padding: 1em;
+            border: solid 1px #777;
+        }
+
+        .tb-firm th {
+            color: #FAFAFF;
+            background-color: #1E2749;
+        }
+
+        /* table */
+        /* grid-firm */
+        /* https://coolors.co/30343f-fafaff-e4d9ff-273469-1e2749 */
+        .gird-firm {
+            padding: 3em;
+        }
+
+        /* Footer */
+        #footer-content {
+            font-size: medium;
+            color: #FAFAFF;
+            display: grid;
+            grid-template-columns: auto auto auto;
+            column-gap: 2em;
+            justify-content: center;
+            padding: 1.5em;
+            background: linear-gradient(90deg, rgba(48, 52, 63, 1) 0%, rgba(39, 52, 105, 1) 35%, rgba(30, 39, 73, 1) 100%);
+        }
+
+        /* Footer */
+    </style>
+</head>
+
+<body>
+    <header id="head-content">
+        <ul class="navigate-no1">
+            <li><img alt="none"
+                    src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRpreAIyC2GV-3VWL-3B0Z6iI90KLtJcCsCDw&s">
+            </li>
+            <li><a>RESUME TRACKING</a></li>
+        </ul>
+        <ul class="navigate-no2">
+            <li><a href="#Firm">Firms</a></li>
+            <li><a href="#WriteOpinion">Write opinion</a></li>
+            <li><a href="#About">About</a></li>
+        </ul>
+    </header>
+
+    <main id="main-content">
+        <article class="inp-find">
+            <h1>Tracking my resume</h1>
+            <p style="line-height: 2em">Resume Tracker is a simple,
+                user-friendly website designed to help job seekers efficiently manage and track
+                their resume submissions. Built with a focus on ease of use and organization,
+                it allows users to record each job application, monitor its status, and stay
+                updated on the recruitment process.</p>
+            <div style="display: flex; justify-content: space-between;">
+                <input style="width: 73%;" type="text" placeholder="Find firm" name="input-firm">
+                <select style="width: 15%;">
+                    <option selected>Status</option>
+                    <option>Received</option>
+                    <option>Pending</option>
+                    <option>Interview Scheduled</option>
+                    <option>Rejected</option>
+                    <option>Extended</option>
+                </select>
+                <input style="width: 10%;" type="button" value="Search" name="">
+            </div>
+        </article>
+        <!-- <section class="grid-container">
+            <div class="gird-firm" style="">
+                1dddddddddddddd</div>
+            <aside style="background-color: aqua;">ASIDE</aside>
+        </section> -->
+        <section>
+            <table class="tb-firm">
+                <caption>
+                    <input style="padding: 1em; margin: 1em;" type="button" value="Add Firm" onclick="addFirm()">
+                </caption>
+                <thead>
+                    <tr>
+                        <th>STT</th>
+                        <th>Company</th>
+                        <th>URL Jobs</th>
+                        <th>Date submit</th>
+                        <th>Status</th>
+                        <th>Action</th>
+                    </tr>
+                </thead>
+                <tbody id="list-firm">
+                    <tr>
+                        <td colspan="6">1</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                </tfoot>
+            </table>
+        </section>
+    </main>
+    <footer id="footer-content">
+        <b>Copyright © Firm</b>
+        <span>Author: Kelvin Tài</span>
+        <a href="mailto:hentaiktvn321@gmail.com"
+            style="text-decoration: none; color: #FAFAFF;">hentaiktvn321@gmail.com</a>
+    </footer>
+</body>
+<script>
+    window.onload = () => { loadResumes() }
+    function loadResumes() {
+        let s = document.getElementById("list-firm")
+        resumes = JSON.parse(localStorage.getItem("resumes"));
+        result = ''
+        if (resumes.length > 0) {
+            i = 0
+            resumes.forEach(e => {
+                i++
+                result += '<tr><td>' + (i) + '</td>' +
+                    '<td>' + (e.company) + '</td>' +
+                    '<td><a target="_blank"' +
+                    'href="">' + (e.url_job) + '</a></td>' +
+                    '<td><time datetime="' + (e.date_submit) + '">' + (e.date_submit) + '</time></td>' +
+                    '<td>' + (e.status) + '</td>' +
+                    '<td><input type="button" value="X" onclick="deleteResume(' + (i) + ')"></td>' +
+                    '</tr>';
+            });
+        }else {
+            result= '<td colspan="6">No DATA</td>'
+        }
+        s.innerHTML = result;
+    }
+    function addFirm() {
+        let resumes = []
+        //first time
+        if (localStorage.getItem("resumes") === null) {
+            alert("Initialize resume !");
+        } else {
+            resumes = JSON.parse(localStorage.getItem("resumes"));
+        }
+        const resume = { id: resumes.length, company: "Fiat", url_job: "https://career.fpt-software.com/", date_submit: new Date(Date.now()).toLocaleString(), status: "Pending" };
+
+        console.log(resumes.length)
+        resumes.push(resume)
+        localStorage.setItem("resumes", JSON.stringify(resumes));
+        loadResumes();
+    }
+    function deleteResume(id) {
+        console.log(id-1)
+        let resumes = JSON.parse(localStorage.getItem("resumes"));
+        resumes.splice(resumes.indexOf(resumes[id-1]), 1);
+        localStorage.setItem("resumes", JSON.stringify(resumes));
+        loadResumes();
+    }
+    function searchResume() {
+
+    }
+</script>
+
+</html>
