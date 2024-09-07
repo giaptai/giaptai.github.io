@@ -482,6 +482,10 @@ body {
 }
 
 @media only screen and (max-width: 480px) {
+    .container {
+        margin: 0 auto;
+        width: 85dvw;
+    }
     .navbar {
         flex-wrap: wrap;
         justify-content: center;
@@ -489,7 +493,7 @@ body {
 
     .navbar .navbar-brand {
         font-weight: 700;
-        font-size: 1.5em;
+        font-size: 2em;
         letter-spacing: 0.02em;
         margin: 0.2em 0;
     }
@@ -509,7 +513,7 @@ body {
     }
 
     .gird-container:nth-child(1) img {
-        width: 65%;
+        width: 45%;
     }
 
     .gird-container:nth-child(1) .col:nth-child(1) {
@@ -547,7 +551,7 @@ body {
     }
 
     .gird-container:nth-child(3) .col:first-child {
-        padding: 2em;
+        padding: 1em;
     }
 
     .gird-container:nth-child(3) .col:first-child .navbar-nav {
@@ -559,7 +563,7 @@ body {
         box-sizing: border-box;
         width: 100%;
         display: grid;
-        grid-template-columns: repeat(3, auto);
+        grid-template-columns: repeat(4, auto);
         gap: 0.5em;
         /* margin: auto; */
         align-content: center;
