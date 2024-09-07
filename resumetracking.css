@@ -1,0 +1,156 @@
+body {
+    padding: 0;
+    margin: 0;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, monospace;
+    background: rgb(202 240 248 / 27%);
+}
+
+.container {
+    margin: 0 auto;
+    padding: 4em 2em;
+    width: 80dvw;
+}
+
+.container p.name {
+    width: 100%;
+    margin: 0.7em 0;
+    font-size: 3em;
+    font-weight: 800;
+    color: #0077b6;
+    text-align: center;
+}
+
+/* .table-container {
+    border: 1px solid;
+    border-radius: 0.5em;
+} */
+
+.table {
+    /* padding: 3em; */
+    width: 85%;
+    border-collapse: collapse;
+    /* border: 1px solid; */
+    margin: auto;
+    /* border-radius: 0.5em; */
+}
+
+.table caption {
+    margin: 1em auto;
+}
+
+.table caption button {
+    padding: 1em;
+    background: #caf0f8;
+    color: #023e8a;
+    border: 0px;
+    font-weight: 700;
+    cursor: pointer;
+}
+
+.table thead th {
+    text-transform: uppercase;
+    padding: 1em;
+    background: #023e8a;
+    color: #ade8f4;
+    text-align: start;
+    font-weight: 700;
+    font-size: 1em;
+}
+
+.table thead th:first-child {
+    border-top-left-radius: 0.8em;
+}
+
+.table thead th:last-child {
+    border-top-right-radius: 0.8em;
+}
+
+/*  */
+.table tbody tr {
+    color: #023e8a;
+    font-weight: bold;
+}
+
+.table tbody tr:hover {
+    /* cursor: grab; */
+    background: #03045e;
+    opacity: 0.85;
+}
+
+.table tbody tr:nth-child(odd) {
+    background: #caf0f8;
+}
+
+.table tbody tr:nth-child(even) {
+    background: #ade8f4;
+}
+
+.table tbody td {
+    text-align: start;
+    font-size: 0.9em;
+    padding: 1.45em;
+}
+
+.table tbody td button {
+    cursor: pointer
+}
+
+.table tbody tr:nth-child(odd) td button {
+    padding: 0.4em 0.9em;
+    background: #90e0ef;
+    color: #0077b6;
+    border: 1px solid #90e0ef;
+    border-radius: 0.5em;
+    font-weight: 700;
+}
+
+.table tbody tr:nth-child(even) td button {
+    padding: 0.4em 0.9em;
+    background: #caf0f8;
+    color: #0077b6;
+    border: 1px solid #caf0f8;
+    border-radius: 0.5em;
+    font-weight: 700;
+}
+
+.table tbody tr:last-child td:first-child {
+    border-bottom-left-radius: 0.8em;
+}
+
+.table tbody tr:last-child td:last-child {
+    border-bottom-right-radius: 0.8em;
+}
+
+#myModal {
+    width: 50%;
+}
+
+/*  */
+.close:hover,
+.close:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+.modal-dialog {
+    padding: 1em;
+    width: 35%;
+    margin: auto;
+    color: #023e8a;
+    border: 1px solid #ade8f4;
+    border-radius: 1em;
+    background: #ade8f4;
+}
+
+.modal-dialog input {
+    padding: 0.7em;
+    border: 0px;
+    width: 50%;
+    background: #caf0f8;
+}
+
+/* .table thead tr th{ */
+/* border: 1px solid #ade8f4; */
+/* border-bottom: 1px solid #ade8f4; */
+/* } */
