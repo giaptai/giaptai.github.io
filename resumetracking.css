@@ -20,6 +20,10 @@ body {
     text-align: center;
 }
 
+.container p.name sub {
+    font-size: small;
+}
+
 /* .table-container {
     border: 1px solid;
     border-radius: 0.5em;
@@ -150,7 +154,100 @@ body {
     background: #caf0f8;
 }
 
-/* .table thead tr th{ */
-/* border: 1px solid #ade8f4; */
-/* border-bottom: 1px solid #ade8f4; */
-/* } */
+
+@media screen and (max-width: 960px) {
+    /* Extension */
+    .container {
+        margin: 0 auto;
+        padding: 0.5em 0em;
+        width: 800px;
+        height: 400px;
+        box-sizing: border-box;
+    }
+    /* Extension */
+
+    /* .container {
+        margin: 0 auto;
+        padding: 1em 0;
+        width: 700px;
+        height: 500px;
+    } */
+
+    .container p.name {
+        width: 100%;
+        margin: 0.7em 0;
+        font-size: 2em;
+    }
+
+    .container p.name sub {
+        font-size: 0.5em;
+    }
+
+    .table caption button {
+        padding: 0.9em;
+        font-size: 0.85em;
+    }
+
+    .table thead th {
+        font-size: 0.9em;
+    }
+
+    .table tbody td {
+        font-size: 0.9em;
+    }
+    /* Extension */
+    .table tbody td button {
+        cursor: pointer;
+        font-size: smaller;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .container p.name {
+        width: 100%;
+        margin: 0.7em 0;
+        font-size: 1.5em;
+    }
+
+    .container p.name sub {
+        font-size: 0.5em;
+    }
+
+    .table caption button {
+        padding: 0.9em;
+        font-size: 0.7em;
+    }
+
+    .table thead th {
+        font-size: 0.8em;
+    }
+
+    .table tbody td {
+        font-size: 0.7em;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .container p.name {
+        width: 100%;
+        margin: 0.7em 0;
+        font-size: 1em;
+    }
+
+    .container p.name sub {
+        font-size: 0.35em;
+    }
+
+    .table caption button {
+        padding: 0.9em;
+        font-size: 0.6em;
+    }
+
+    .table thead th {
+        font-size: 0.5em;
+    }
+
+    .table tbody td {
+        font-size: 0.4em;
+    }
+}

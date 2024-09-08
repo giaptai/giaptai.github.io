@@ -1,0 +1,15 @@
+{
+    "manifest_version": 3,
+    "name": "Resume tracking",
+    "description": "resume tracking and my first extension",
+    "version": "1.0.0",
+    "permissions": [
+        "storage"
+    ],
+    "action": {
+        "default_popup": "resumetracking.html"
+    },
+    "background": {
+        "service_worker": "resumetracking.js"
+    }
+}
