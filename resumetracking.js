@@ -236,6 +236,12 @@ function addResume() {
     localStorage.setItem("resumes", JSON.stringify(resumes));
     loadResumes();
     company.value = '', link.value = '', dateSubmit.value = '', status.value = 'Pending';
+
+    chrome.storage.local.set({ 'company': company.value });
+    chrome.storage.local.set({ 'link': link.value });
+    chrome.storage.local.set({ 'dateSubmit': dateSubmit.value });
+    chrome.storage.local.set({ 'status': status.value });
+    
     document.getElementById("myModal").style.display = "none";
 }
 
