@@ -7,45 +7,27 @@ document.getElementsByClassName("close")[0].addEventListener("click", () => {
 })
 
 window.onclick = function (event) {
+    // 
     var modal = document.getElementById("myModal");
     if (event.target == modal) {
         modal.style.display = "none";
     }
+    // document.getElementsByClassName("ok")[0].onclick = () => {
+    //     addResume()
+    // }
 }
 
 document.getElementById("add-btn").onclick = function () {
-    document.getElementById("myModal").style.display = "block";
-}
-
-// only extension 
-document.addEventListener('DOMContentLoaded', () => {
     let company = document.getElementsByName("company")[0]
     let link = document.getElementsByName("link")[0]
     let dateSubmit = document.getElementsByName("date-submit")[0]
     let status = document.getElementsByName("status")[0]
-
-    // Lấy dữ liệu từ chrome.storage khi mở popup
-    chrome.storage.local.get(['company', 'link', 'dateSubmit', 'status'], function (result) {
-        company.value = result.company || '';
-        link.value = result.link || '';
-        dateSubmit.value = result.dateSubmit || '';
-        status.value = result.status || 'Applied';
-    });
-
-    // Lưu dữ liệu vào chrome.storage khi có sự thay đổi trong input
-    company.addEventListener('input', function () {
-        chrome.storage.local.set({ 'company': company.value });
-    });
-    link.addEventListener('input', function () {
-        chrome.storage.local.set({ 'link': link.value });
-    });
-    dateSubmit.addEventListener('input', function () {
-        chrome.storage.local.set({ 'dateSubmit': dateSubmit.value });
-    });
-    status.addEventListener('change', function () {
-        chrome.storage.local.set({ 'status': status.value });
-    });    
-});
+    company.value = '', link.value = '', dateSubmit.value = '', status.value = 'Applied';
+    document.getElementsByClassName("ok")[0].onclick = () => {
+        addResume()
+    }
+    document.getElementById("myModal").style.display = "block";
+}
 
 function loadResumes() {
     let s = document.getElementById("tbody")
@@ -121,6 +103,9 @@ function updateResume(id) {
     localStorage.setItem("resumes", JSON.stringify(resumes))
     loadResumes();
     company.value = '', link.value = '', dateSubmit.value = '', status.value = 'Applied';
+    // document.getElementsByClassName("ok")[0].onclick = () => {
+    //     addResume()
+    // }
     document.getElementById("myModal").style.display = "none";
 }
 
@@ -140,7 +125,7 @@ function detailResume(id) {
     status.value = resume.status;
 
     document.getElementById("myModal").style.display = "block";
-    document.getElementsByClassName("ok")[0].onclick = function () {
+    document.getElementsByClassName("ok")[0].onclick = () => {
         updateResume(id - 1)
     }
 }
@@ -156,3 +141,33 @@ function deleteResume(id) {
 function searchResume() {
     console.log('a')
 }
+
+// only extension
+// document.addEventListener('DOMContentLoaded', () => {
+//     let company = document.getElementsByName("company")[0]
+//     let link = document.getElementsByName("link")[0]
+//     let dateSubmit = document.getElementsByName("date-submit")[0]
+//     let status = document.getElementsByName("status")[0]
+
+//     // Lấy dữ liệu từ chrome.storage khi mở popup
+//     chrome.storage.local.get(['company', 'link', 'dateSubmit', 'status'], function (result) {
+//         company.value = result.company || '';
+//         link.value = result.link || '';
+//         dateSubmit.value = result.dateSubmit || '';
+//         status.value = result.status || 'Applied';
+//     });
+
+//     // Lưu dữ liệu vào chrome.storage khi có sự thay đổi trong input
+//     company.addEventListener('input', function () {
+//         chrome.storage.local.set({ 'company': company.value });
+//     });
+//     link.addEventListener('input', function () {
+//         chrome.storage.local.set({ 'link': link.value });
+//     });
+//     dateSubmit.addEventListener('input', function () {
+//         chrome.storage.local.set({ 'dateSubmit': dateSubmit.value });
+//     });
+//     status.addEventListener('change', function () {
+//         chrome.storage.local.set({ 'status': status.value });
+//     });
+// });
