@@ -190,10 +190,10 @@ function loadResumes() {
                 <td>${e.status}</td>
                 <td>
                     <button type="button" class="btn-delete" data-id="${i}">X</button>
-                    <button type="button" class="btn-detail" data-id="${i}">?</button>
                 </td>
             </tr>`;
         });
+        //<button type="button" class="btn-detail" data-id="${i}">?</button>
     } else {
         result = '<td style="text-align:center" colspan="6">NO DATA</td>';
     }
@@ -205,7 +205,7 @@ function loadResumes() {
             deleteResume(event.target.dataset.id);
         }
         if (event.target.classList.contains('btn-detail')) {
-            updateResume(event.target.dataset.id);
+            updateResumeButton(event.target.dataset.id);
         }
     });
 }
@@ -223,6 +223,7 @@ function addResume() {
     let link = document.getElementsByName("link")[0]
     let dateSubmit = document.getElementsByName("date-submit")[0]
     let status = document.getElementsByName("status")[0]
+
     let resumes = JSON.parse(localStorage.getItem("resumes") || "[]");
     const resume = {
         id: resumes.length,
@@ -235,16 +236,16 @@ function addResume() {
     resumes.push(resume);
     localStorage.setItem("resumes", JSON.stringify(resumes));
     loadResumes();
-    company.value = '', link.value = '', dateSubmit.value = '', status.value = 'Pending';
+    company.value = '', link.value = '', dateSubmit.value = '', status.value = 'Applied';
 
     chrome.storage.local.set({ 'company': company.value });
     chrome.storage.local.set({ 'link': link.value });
     chrome.storage.local.set({ 'dateSubmit': dateSubmit.value });
     chrome.storage.local.set({ 'status': status.value });
-    
+
     document.getElementById("myModal").style.display = "none";
 }
-
+// 
 function updateResume(id) {
     let resumes = JSON.parse(localStorage.getItem("resumes"));
     let resume = resumes[id];
@@ -255,12 +256,33 @@ function updateResume(id) {
 
     company.value = resume.company;
     link.value = resume.url_job;
-    dateSubmit.value = new Date(resume.date_submit).toISOString().substring(0, 10);
+    resume.date_submit = new Date(dateSubmit).toISOString().substring(0, 10);
+    resume.status = status.value;
+
+    document.getElementById("myModal").style.display = "none";
+}
+
+function updateResumeButton(id) {
+    let resumes = JSON.parse(localStorage.getItem("resumes"));
+    let resume = resumes[id];
+    let company = document.getElementsByName("company")[0]
+    let link = document.getElementsByName("link")[0]
+    let dateSubmit = document.getElementsByName("date-submit")[0]
+    let status = document.getElementsByName("status")[0]
+
+    company.value = resume.company;
+    link.value = resume.url_job;
+    dateSubmit.value = isNaN(resume.date_submit) ? new Date(resume.date_submit).toISOString().substring(0, 10) : '';
     status.value = resume.status;
 
-    document.getElementsByClassName("ok")[0].value = "Save";
+    document.getElementsByClassName("ok")[0].value = "save";
+    document.getElementsByClassName("ok")[0].className = "save";
+
     document.getElementById("myModal").style.display = "block";
+    document.getElementsByClassName("save")[0].onclick=updateResume(id)
 }
+// 
+
 
 function deleteResume(id) {
     let resumes = JSON.parse(localStorage.getItem("resumes"));
