@@ -12,9 +12,6 @@ window.onclick = function (event) {
     if (event.target == modal) {
         modal.style.display = "none";
     }
-    // document.getElementsByClassName("ok")[0].onclick = () => {
-    //     addResume()
-    // }
 }
 
 document.getElementById("add-btn").onclick = function () {
@@ -33,6 +30,9 @@ function loadResumes() {
     let s = document.getElementById("tbody")
     resumes = JSON.parse(localStorage.getItem("resumes"));
     result = ''
+    if (result != null) {
+        return s.innerHTML = '<td style="text-align:center" colspan="6">NO DATA</td>';
+    }
     if (resumes.length > 0) {
         i = 0
         resumes.forEach(e => {
