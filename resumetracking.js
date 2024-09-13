@@ -30,7 +30,7 @@ function loadResumes() {
     let s = document.getElementById("tbody")
     resumes = JSON.parse(localStorage.getItem("resumes"));
     result = ''
-    if (result != null) {
+    if (resumes != null) {
         return s.innerHTML = '<td style="text-align:center" colspan="6">NO DATA</td>';
     }
     if (resumes.length > 0) {
