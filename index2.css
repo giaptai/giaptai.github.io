@@ -19,6 +19,7 @@
     margin: 0;
     padding: 0;
     list-style: none;
+    text-decoration: none;
 }
 
 body {
@@ -80,6 +81,7 @@ article {
 
 .overview section h1{
     font-size: 4em;
+    margin-bottom: 1rem;
 }
 
 .overview section p{
@@ -124,10 +126,9 @@ article {
     background: var(--neutral);
 }
 
-/* .overview section:last-child>div{
-    margin-left: 50%;
-    transform: translate(-50%, 0%);
-} */
+.overview section:last-child>div span a{
+    color: var(--accent);
+}
 
 .overview section:last-child div .card{
     /* flex-shrink: 1; */
