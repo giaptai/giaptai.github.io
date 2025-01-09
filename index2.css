@@ -45,7 +45,7 @@ body {
 .nav {
     font-size: var(--head-size);
     font-weight: 700;
-    border: 2px solid rgba(34, 36, 40, 0.5);
+    border: 2px solid var(--secondary);
 }
 
 .navbar {}
@@ -217,9 +217,10 @@ article {
 }
 
 footer {
-    border-top: 2px solid rgba(34, 36, 40, 0.5);;
+    border-top: 2px solid var(--secondary);
     text-align: center;
     font-weight: 700;
-    height: 5rem;
-    line-height: 5rem;
+    height: 5.5rem;
+    align-content: center;
+    /* line-height: 5.5rem; */
 }
