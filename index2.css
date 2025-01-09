@@ -151,13 +151,32 @@ article {
 .technical {
     grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
     gap: 1.5rem;
+    grid-auto-rows: 1fr; /*makes all card same height in grid layout*/
 }
+
 
 .technical .box {
     border: 0.2em solid var(--neutral);
     border-radius: 1rem;
     padding: 1rem;
     background: rgba(34, 36, 40, 0.5);
+
+    animation-name: boxTech;
+    animation-duration: 1.3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease;
+}
+
+@keyframes boxTech{
+    0%{
+        opacity: 0;
+        transform: translateY(-20%);
+    }
+
+    100%{
+        opacity: 1;
+        transform: translateY(0%);
+    }
 }
 
 .technical .box h2 {
