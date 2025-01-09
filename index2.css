@@ -189,11 +189,11 @@ article {
     height: 30rem;
 }
 
-.project-item p {
-    text-align: center;
+.project-item p{
     font-size: xx-large;
-    line-height: 30rem;
     font-weight: 700;
+    text-align: center;
+    line-height: 30rem;
 }
 
 footer {
