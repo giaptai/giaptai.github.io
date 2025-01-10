@@ -1,4 +1,4 @@
-:root {
+:root:has(select option[value="dark"]:checked)  {
     --primary: #383234;
     --secondary: #7c7c7c;
     --background: #0d0c13;
@@ -13,6 +13,8 @@
     --button-size: calc(14px * 0.3em);
 
     --space-item: calc(1em * (1 + 0.5em));
+
+    --font-fml: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
 
 * {
@@ -22,15 +24,23 @@
     text-decoration: none;
 }
 
-body {
+body:has(select option[value="light"]:checked) 
+{
+    --primary: #eaeaea;
+    --secondary: #b3b3b3;
+    --background: #fdfdff;
+    --accent: #0d0c13;
+    --neutral: #f0f0f0;
+
     color: var(--accent);
     background: var(--background);
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    font-family: var(--font-fml);
 }
 
 .container {
-    padding: 0rem 3rem;
-    height: 100%;
+    padding: 3rem 3rem;
+    /* height: 100%; */
+    background: var(--background);
 }
 
 .d-grid {
@@ -46,6 +56,9 @@ body {
     font-size: var(--head-size);
     font-weight: 700;
     border: 2px solid var(--secondary);
+
+    background: var(--background);
+    color: var(--accent);
 }
 
 .navbar {}
@@ -59,8 +72,15 @@ body {
     margin: 0 1.2rem;
 }
 
+.nav-item select{
+    padding: 0.4rem 0.7rem;
+    border-radius: 3rem;
+    background: var(--background);
+    color: var(--accent);
+}
+
 article {
-    margin: 3rem 0rem;
+    margin: 0rem 0rem;
 }
 
 .overview {
@@ -76,46 +96,46 @@ article {
     border: 0.2em solid var(--neutral);
     border-radius: 1rem;
     background: rgba(34, 36, 40, 0.5);
+    color: var(--accent);
 }
 
-.overview section h1{
+.overview section h1 {
     font-size: 4em;
     margin-bottom: 1rem;
 }
 
-.overview section p{
+.overview section p {
     line-height: 2rem;
     font-size: 1em;
 }
 
-.overview button{
+.overview button {
     width: clamp(7rem, 1vw, 9rem);
     height: clamp(2.5rem, 1vw, 3rem);
     margin-right: 1rem;
     margin-top: 2rem;
     border: 2px solid var(--accent);
     font-weight: 600;
-    color:  var(--accent);
     border-radius: 3rem;
     background: rgba(34, 36, 40, 0.5);
-
+    color: var(--accent);
     transition: border 0.3s ease-in, color 0.3s ease-in, border-radius 0.3s ease-in, background 0.3s ease-in;
 }
 
-.overview button:hover{
+.overview button:hover {
     border: 2px solid var(--accent);
-    color:  var(--neutral);
+    color: var(--neutral);
     border-radius: 3rem;
     background: var(--accent);
 }
 
-.overview section:last-child{
+.overview section:last-child {
     text-align: center;
     box-sizing: border-box;
     height: max-content;
 }
 
-.overview section:last-child p{
+.overview section:last-child p {
     margin: 1rem auto;
     width: fit-content;
     align-items: center;
@@ -125,11 +145,11 @@ article {
     background: var(--neutral);
 }
 
-.overview section:last-child>div span a{
+.overview section:last-child>div span a {
     color: var(--accent);
 }
 
-.overview section:last-child div .card{
+.overview section:last-child div .card {
     /* flex-shrink: 1; */
     display: flex;
     justify-content: start;
@@ -143,18 +163,21 @@ article {
     word-break: break-all;
     overflow-wrap: break-word;
 }
+.skills{
+    color: var(--accent);
+}
 
 .skills h1 {
     text-align: center;
-    margin-bottom: 1.5em;
+    margin: 1.5em 0em;
 }
 
 .technical {
     grid-template-columns: repeat(auto-fit, minmax(clamp(15rem, 17rem, 20rem), 1fr));
     gap: 1.5rem;
-    grid-auto-rows: 1fr; /*makes all card same height in grid layout*/
+    grid-auto-rows: 1fr;
+    /*makes all card same height in grid layout*/
 }
-
 
 .technical .box {
     border: 0.2em solid var(--neutral);
@@ -168,13 +191,13 @@ article {
     animation-timing-function: ease;
 }
 
-@keyframes boxTech{
-    0%{
+@keyframes boxTech {
+    0% {
         opacity: 0;
         transform: translateY(-20%);
     }
 
-    100%{
+    100% {
         opacity: 1;
         transform: translateY(0%);
     }
@@ -211,7 +234,7 @@ article {
     height: 30rem;
 }
 
-.project-item p{
+.project-item p {
     font-size: xx-large;
     font-weight: 700;
     text-align: center;
@@ -219,6 +242,8 @@ article {
 }
 
 footer {
+    color: var(--accent);
+    background: var(--background);
     border-top: 2px solid var(--secondary);
     text-align: center;
     font-weight: 700;
