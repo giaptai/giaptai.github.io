@@ -29,7 +29,7 @@ body {
 }
 
 .container {
-    padding: 0rem 7rem;
+    padding: 0rem 3rem;
     height: 100%;
 }
 
@@ -70,10 +70,9 @@ article {
 
 .overview section {
     flex-grow: 1;
-    flex-basis: 47%;
-
+    flex-basis: 100%;
+    max-width: 100%;
     padding: 1rem;
-
     border: 0.2em solid var(--neutral);
     border-radius: 1rem;
     background: rgba(34, 36, 40, 0.5);
@@ -141,6 +140,8 @@ article {
     border: 2px solid rgba(34, 36, 40, 0.778);
     border-radius: 0.5rem;
     background: var(--neutral);
+    word-break: break-all;
+    overflow-wrap: break-word;
 }
 
 .skills h1 {
@@ -149,7 +150,7 @@ article {
 }
 
 .technical {
-    grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
     gap: 1.5rem;
     grid-auto-rows: 1fr; /*makes all card same height in grid layout*/
 }
@@ -185,10 +186,11 @@ article {
 
 .projects {
     /* grid-template-columns: repeat(1, minmax(8rem, 1fr)); */
-    grid-template-columns: 1fr;
+    grid-template-columns: minmax(7rem, 1fr);
     border: 0.2em solid var(--neutral);
     border-radius: 1rem;
     background: rgba(34, 36, 40, 0.5);
+    grid-auto-columns: 1fr;
 }
 
 .project-item {
