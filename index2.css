@@ -70,7 +70,7 @@ article {
 
 .overview section {
     flex-grow: 1;
-    flex-basis: 100%;
+    flex-basis: 48%;
     max-width: 100%;
     padding: 1rem;
     border: 0.2em solid var(--neutral);
@@ -150,7 +150,7 @@ article {
 }
 
 .technical {
-    grid-template-columns: repeat(auto-fit, minmax(15rem, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(clamp(15rem, 17rem, 20rem), 1fr));
     gap: 1.5rem;
     grid-auto-rows: 1fr; /*makes all card same height in grid layout*/
 }
