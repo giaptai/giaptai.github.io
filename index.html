@@ -11,10 +11,11 @@
 <body>
     <nav class="nav">
         <ul class="navbar d-flex">
-            <li class="nav-item">Home</li>
-            <li class="nav-item">About me</li>
-            <li class="nav-item">Projects</li>
-            <li class="nav-item">Contact</li>
+            <li class="nav-item"><a href="#">Home</a></li>
+            <li class="nav-item"><a href="#aboutme">About me</a></li>
+            <li class="nav-item"><a href="#technical">Technicals</a></li>
+            <li class="nav-item"><a href="#project">Projects</a></li>
+            <li class="nav-item"><a href="#contact">Contact</a></li>
             <li class="nav-item">
                 <select aria-label="label for the select">
                     <option value="dark">Dark mode</option>
@@ -26,8 +27,17 @@
     <div class="container">
         <main id="main-content">
             <article class="overview d-flex">
-                <section>
-                    <h1>Hi, I'm Tai3</h1>
+                <section id="aboutme">
+                    <!-- <h1>Hi, I'm Tai3</h1> -->
+                    <h1>
+                        Hi, I'm
+                        <span>
+                            <span>Tai3</span>
+                            <span>PROGRAMMER</span>
+                            <span>DEVELOPER</span>
+                            <span>ENGINEER</span>
+                        </span>
+                    </h1>
                     <!-- <h3>Software developer</h3> -->
                     <p>A candidate graduated with a software engineering major at Saigon University
                         and is seeking entry-level job opportunities as a back-end developer.
@@ -68,7 +78,7 @@
 
             <article class="skills">
                 <h1 style="text-transform: uppercase;">Technical skills</h1>
-                <section class="technical d-grid">
+                <section id="technical" class="technical d-grid">
                     <div class="box">
                         <h2>C++</h2>
                         <p>Studied in the first year</p>
@@ -156,7 +166,7 @@
 
             <article class="skills">
                 <h1 style="text-transform: uppercase;">Projects</h1>
-                <section class="projects d-grid">
+                <section id="project" class="projects d-grid">
                     <div class="project-item d-flex">
                         <iframe src="https://www.youtube.com/embed/A4IBAro7RZ4"
                             title="Build Color-scheme by HTML, CSS, Javascript" frameborder="0"
@@ -175,7 +185,7 @@
                 </section>
             </article>
             <!--
-            <article id="contact">
+            <section id="contact">
                 <form>
                     <fieldset>
                       <legend>Contact me</legend>
@@ -184,7 +194,7 @@
                       <button type="button">Send</button>
                     </fieldset>
                   </form>
-            </article>
+            </section>
             <hr>
              -->
         </main>

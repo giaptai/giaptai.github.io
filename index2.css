@@ -1,4 +1,4 @@
-:root:has(select option[value="dark"]:checked)  {
+:root:has(select option[value="dark"]:checked) {
     --primary: #383234;
     --secondary: #7c7c7c;
     --background: #0d0c13;
@@ -24,17 +24,27 @@
     text-decoration: none;
 }
 
-body:has(select option[value="light"]:checked) 
-{
+body:has(select option[value="light"]:checked) {
     --primary: #eaeaea;
     --secondary: #b3b3b3;
     --background: #fdfdff;
     --accent: #0d0c13;
     --neutral: #f0f0f0;
 
-    color: var(--accent);
-    background: var(--background);
+    --head-size: calc(1em + 0.06598vw);
+    --body-size: calc(0.9em + 0.06598vw);
+    --sub-size: calc(18px * 1em);
+    --caption-size: calc(12px * 1em);
+    --footer-size: calc(12px * 1em);
+    --button-size: calc(14px * 0.3em);
+
+    --space-item: calc(1em * (1 + 0.5em));
+
     font-family: var(--font-fml);
+}
+
+a {
+    color: var(--accent);
 }
 
 .container {
@@ -72,7 +82,7 @@ body:has(select option[value="light"]:checked)
     margin: 0 1.2rem;
 }
 
-.nav-item select{
+.nav-item select {
     padding: 0.4rem 0.7rem;
     border-radius: 3rem;
     background: var(--background);
@@ -100,9 +110,56 @@ article {
 }
 
 .overview section h1 {
-    font-size: 4em;
+    font-size: 3.5em;
     margin-bottom: 1rem;
+
+    background: linear-gradient(100deg, var(--primary), var(--secondary));
+    background-clip: text;
+    color: transparent;
 }
+
+.overview section h1>span {
+    position: relative;
+    display: inline-block;
+    height: 1.15em;
+    width: 27rem;
+    vertical-align: bottom;
+    overflow: hidden;
+}
+
+.overview section h1>span span {
+    background: linear-gradient(45deg, red, blue);
+    background-clip: text;
+    color: transparent;
+}
+
+.overview section h1>span>span {
+    display: block;
+    animation: animaworlds 5s infinite ease-out;
+}
+
+@keyframes animaworlds {
+    0% {
+        transform: translateY(0%);
+    }
+
+    25% {
+        transform: translateY(-100%);
+    }
+
+    50% {
+        transform: translateY(-200%);
+    }
+
+    75% {
+        transform: translateY(-300%);
+    }
+
+    100% {
+        transform: translateY(0%);
+    }
+}
+
 
 .overview section p {
     line-height: 2rem;
@@ -163,7 +220,8 @@ article {
     word-break: break-all;
     overflow-wrap: break-word;
 }
-.skills{
+
+.skills {
     color: var(--accent);
 }
 
