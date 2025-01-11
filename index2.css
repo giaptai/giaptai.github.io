@@ -122,9 +122,10 @@ article {
     position: relative;
     display: inline-block;
     height: 1.15em;
-    width: 27rem;
+    width: min(27rem,100%);
     vertical-align: bottom;
     overflow: hidden;
+    word-break: break-word;
 }
 
 .overview section h1>span span {
