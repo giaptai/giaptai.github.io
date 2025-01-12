@@ -1,9 +1,12 @@
 :root:has(select option[value="dark"]:checked) {
-    --primary: #383234;
-    --secondary: #7c7c7c;
-    --background: #0d0c13;
-    --accent: #fdfdff;
-    --neutral: #222428;
+    --primary-color: #383234;
+    --primary-text: #F8F8FF;
+
+    --secondary-color: #494F55;
+    --secondary-text: #FDFCFA;
+
+    --primary-background: #0d0c13;
+    --secondary-background: #414A4C;
 
     --head-size: calc(1em + 0.06598vw);
     --body-size: calc(0.9em + 0.06598vw);
@@ -25,11 +28,19 @@
 }
 
 body:has(select option[value="light"]:checked) {
-    --primary: #eaeaea;
-    --secondary: #b3b3b3;
-    --background: #fdfdff;
-    --accent: #0d0c13;
-    --neutral: #f0f0f0;
+    --primary-color: #F8F8FF;
+    --primary-text: #383234;
+
+    --secondary-color: #4d4d4d;
+    /* Dark Gray */
+    --secondary-text: #e0e0e0;
+    /* Light Gray */
+
+    --primary-background: #ffffff;
+    /* White */
+    --secondary-background: #f2f2f2;
+    /* Very Light Gray */
+
 
     --head-size: calc(1em + 0.06598vw);
     --body-size: calc(0.9em + 0.06598vw);
@@ -44,13 +55,13 @@ body:has(select option[value="light"]:checked) {
 }
 
 a {
-    color: var(--accent);
+    color: var(--primary-text);
 }
 
 .container {
     padding: 3rem 3rem;
     /* height: 100%; */
-    background: var(--background);
+    background: var(--primary-background);
 }
 
 .d-grid {
@@ -65,10 +76,10 @@ a {
 .nav {
     font-size: var(--head-size);
     font-weight: 700;
-    border: 2px solid var(--secondary);
+    border: 2px solid var(--secondary-color);
 
-    background: var(--background);
-    color: var(--accent);
+    background: var(--primary-background);
+    color: var(--primary-text);
 }
 
 .navbar {}
@@ -85,8 +96,8 @@ a {
 .nav-item select {
     padding: 0.4rem 0.7rem;
     border-radius: 3rem;
-    background: var(--background);
-    color: var(--accent);
+    background: var(--primary-background);
+    color: var(--primary-text);
 }
 
 article {
@@ -103,17 +114,17 @@ article {
     flex-basis: 48%;
     max-width: 100%;
     padding: 1rem;
-    border: 0.2em solid var(--neutral);
+    border: 0.2em solid var(--secondary-color);
     border-radius: 1rem;
-    background: rgba(34, 36, 40, 0.5);
-    color: var(--accent);
+    background: var(--primary-background);
+    color: var(--primary-text);
 }
 
 .overview section h1 {
     font-size: 3.5em;
     margin-bottom: 1rem;
 
-    background: linear-gradient(100deg, var(--primary), var(--secondary));
+    background: linear-gradient(100deg, var(--primary-text), var(--secondary-text));
     background-clip: text;
     color: transparent;
 }
@@ -122,7 +133,7 @@ article {
     position: relative;
     display: inline-block;
     height: 1.15em;
-    width: min(27rem,100%);
+    width: min(33rem, 100%);
     vertical-align: bottom;
     overflow: hidden;
     word-break: break-word;
@@ -161,10 +172,10 @@ article {
     }
 }
 
-
 .overview section p {
-    line-height: 2rem;
-    font-size: 1em;
+    line-height: 2.2rem;
+    font-size: 1.15em;
+    text-align: justify;
 }
 
 .overview button {
@@ -172,19 +183,19 @@ article {
     height: clamp(2.5rem, 1vw, 3rem);
     margin-right: 1rem;
     margin-top: 2rem;
-    border: 2px solid var(--accent);
+    border: 2px solid var(--secondary-color);
     font-weight: 600;
     border-radius: 3rem;
-    background: rgba(34, 36, 40, 0.5);
-    color: var(--accent);
+    background: var(--primary-text);
+    color: var(--primary-color);
     transition: border 0.3s ease-in, color 0.3s ease-in, border-radius 0.3s ease-in, background 0.3s ease-in;
 }
 
 .overview button:hover {
-    border: 2px solid var(--accent);
-    color: var(--neutral);
+    border: 2px solid var(--secondary-color);
+    color: var(--primary-text);
     border-radius: 3rem;
-    background: var(--accent);
+    background: var(--primary-color);
 }
 
 .overview section:last-child {
@@ -200,11 +211,11 @@ article {
     padding: 0.3rem 0.5rem;
     border: 2px solid rgba(34, 36, 40, 0.778);
     border-radius: 0.5rem;
-    background: var(--neutral);
+    background: var(--primary-background);
 }
 
 .overview section:last-child>div span a {
-    color: var(--accent);
+    color: var(--primary-text);
 }
 
 .overview section:last-child div .card {
@@ -217,13 +228,13 @@ article {
     margin: 1rem 0rem;
     border: 2px solid rgba(34, 36, 40, 0.778);
     border-radius: 0.5rem;
-    background: var(--neutral);
-    word-break: break-all;
+    background: var(--primary-background);
+    word-break: break-word;
     overflow-wrap: break-word;
 }
 
 .skills {
-    color: var(--accent);
+    color: var(--primary-text);
 }
 
 .skills h1 {
@@ -239,10 +250,10 @@ article {
 }
 
 .technical .box {
-    border: 0.2em solid var(--neutral);
+    border: 0.2em solid var(--secondary-color);
     border-radius: 1rem;
     padding: 1rem;
-    background: rgba(34, 36, 40, 0.5);
+    /* background: rgba(34, 36, 40, 0.5); */
 
     animation-name: boxTech;
     animation-duration: 1.3s;
@@ -269,44 +280,69 @@ article {
 .projects {
     /* grid-template-columns: repeat(1, minmax(8rem, 1fr)); */
     grid-template-columns: minmax(7rem, 1fr);
-    border: 0.2em solid var(--neutral);
+    border: 0.2em solid var(--secondary-color);
     border-radius: 1rem;
-    background: rgba(34, 36, 40, 0.5);
+    background: var(--secondary-background);
     grid-auto-columns: 1fr;
 }
 
 .project-item {
     border-radius: 1rem;
     gap: 0rem 1.5rem;
-    margin: 1.5rem 1.5rem;
-    justify-content: center;
+    margin: 1.75rem 1.5rem;
+    justify-content: space-between;
 }
 
 .project-item img,
 .project-item video,
-.project-item iframe,
-.project-item p {
+.project-item iframe {
     flex-grow: 1;
     /* flex-basis: 45%; */
     border-radius: 1rem;
-    border: 0.2em solid var(--neutral);
-    height: 30rem;
+    border: 0.15em solid var(--secondary-color);
+    height: 23rem;
+}
+ 
+.project-item .demo,
+.project-item .brief{
+    flex-basis: 48%;
+    flex-grow: 1;
+}
+
+.project-item .brief h2{
+    font-size: xx-large;
+    margin-bottom: 0.7rem;
+}
+
+.navtag {
+    flex-shrink: 1;
 }
 
 .project-item p {
-    font-size: xx-large;
-    font-weight: 700;
-    text-align: center;
-    line-height: 30rem;
+    font-size: large;
+    font-weight: 500;
+    /* text-align: center; */
+    line-height: 2rem;
+}
+
+.tag {
+    text-transform: uppercase;
+    font-size: medium;
+    margin: 0.8rem 1.2rem 0.8rem 0rem;
+    padding: 0.4rem 0.5rem;
+    border: 0.1rem solid var(--secondary-text);
+    border-radius: 0.25rem;
+    color: var(--primary-background);
+    background: var(--primary-text);
 }
 
 footer {
-    color: var(--accent);
-    background: var(--background);
-    border-top: 2px solid var(--secondary);
+    color: var(--primary-text);
+    background: var(--primary-background);
+    border-top: 2px solid var(--secondary-color);
     text-align: center;
     font-weight: 700;
-    height: 5.5rem;
+    height: 4.5rem;
     align-content: center;
     /* line-height: 5.5rem; */
 }
